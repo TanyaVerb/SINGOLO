@@ -415,7 +415,7 @@ label:hover svg path {
     height: 1.6rem;
   }
 }
-.card__content {
+.portfolio__content, .card__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -473,4 +473,98 @@ label:hover svg path {
   font-size: 1.2rem;
   line-height: 183%;
   text-align: justify;
+}
+
+.portfolio-container {
+  background-color: #edff7e;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.portfolio__content {
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.portfolio__tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.6rem;
+}
+
+.portfolio__tag {
+  display: inline-block;
+  height: 2.8rem;
+  border: 1px solid #7067cf;
+  border-radius: 4px;
+  padding: 0.8rem;
+  color: #7067cf;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.portfolio__tag:hover {
+  background-color: #7067cf;
+  color: #fff;
+}
+.portfolio__tag:active {
+  background-color: #7067cf;
+  color: #fff;
+}
+
+.portfolio__items {
+  max-width: 1020px;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, 220px);
+  grid-template-rows: repeat(auto-fill, 187px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.portfolio__text {
+  margin-bottom: 2rem;
+}
+
+.portfolio__item img {
+  display: block;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 779px) {
+  .portfolio__items {
+    -webkit-column-gap: 1.2rem;
+       -moz-column-gap: 1.2rem;
+            column-gap: 1.2rem;
+    row-gap: 1.2rem;
+  }
+}
+@media (max-width: 531px) {
+  .portfolio__items {
+    display: grid;
+    -webkit-column-gap: 1.3rem;
+       -moz-column-gap: 1.3rem;
+            column-gap: 1.3rem;
+    row-gap: 1.3rem;
+    grid-template-columns: repeat(auto-fill, 161px);
+    grid-template-rows: repeat(auto-fill, 161px);
+  }
+  .portfolio__item img {
+    width: 161px;
+    height: 161px;
+  }
+  .portfolio-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .portfolio__content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }/*# sourceMappingURL=style.css.map */
