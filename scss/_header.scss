@@ -1,0 +1,186 @@
+.main {
+  padding: 65px 0px 0px 0px;
+}
+.header__container {
+  padding: 0 7.75rem;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+// плашка
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  z-index: 2;
+}
+.header__body {
+  position: relative;
+  height: 65px;
+  @include flex();
+}
+
+.header__logo {
+  flex: 0 0 124px;
+  @include font(700, 2.5rem);
+  color: $white;
+  position: relative;
+  z-index: 3;
+  & span {
+    color: $green;
+  }
+}
+
+.header__burger {
+  display: none;
+  cursor: pointer;
+}
+
+.header__list {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+.header__item {
+  @include flex(row, center, flex-start);
+
+  & + &::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: $white;
+    margin: 0 1.5rem;
+    align-items: center;
+  }
+}
+
+.header__link {
+  text-transform: uppercase;
+  line-height: 1.17;
+  @include font(700, 1.2rem, 1.4rem);
+  letter-spacing: -0.04em;
+  color: $white;
+  transition: 0.5s;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+.burger__checkbox {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+}
+@media (max-width: 767px) {
+  .header__container {
+    padding: 0 2rem;
+  }
+  .wrapper:has(.burger__checkbox:checked) .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $main;
+    z-index: 2;
+  }
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 20px;
+    position: relative;
+    z-index: 3;
+
+    &::before,
+    &::after {
+      content: "";
+      background-color: $white;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      border-radius: 5px;
+      left: 0;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    & span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      top: 9px;
+      border-radius: 5px;
+      background-color: $white;
+    }
+  }
+
+  .header__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $main;
+    padding: 184px 20px 320px 68px;
+    transform: translateX(-100%);
+  }
+
+  .header__container:has(.burger__checkbox:checked) .header__menu {
+    transform: translateX(0%);
+    transition: 0.3s;
+  }
+  .header__container:has(.burger__checkbox:checked) .header__burger {
+    transform: rotate(90deg);
+  }
+
+  .header__list {
+    display: block;
+  }
+
+  .header__list li {
+    margin: 0px 0px 27px 0px;
+  }
+  .header__logo {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .header__container:has(.burger__checkbox:checked)
+    .header__item
+    + .header__item::before {
+    content: "";
+    display: none;
+  }
+
+  .header__container:has(.burger__checkbox:checked) .header__link {
+    font-size: 2.4rem;
+    line-height: 1.2rem;
+  }
+  .header__container:has(.burger__checkbox:checked) .header__link {
+    margin-bottom: 27px;
+  }
+  .header__container:has(.burger__checkbox:checked) .header__logo {
+    @include font(700, 1.9rem, 1);
+    text-align: start;
+    padding-left: 2.8rem;
+  }
+}
