@@ -414,4 +414,63 @@ label:hover svg path {
     width: 1.6rem;
     height: 1.6rem;
   }
+}
+.card__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.services-container {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+
+.services__title {
+  margin-bottom: 2rem;
+}
+
+.services__text {
+  margin-bottom: 4rem;
+}
+
+.services__list {
+  display: grid;
+  gap: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-rows: repeat(auto-fill, 98px);
+}
+
+.services__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 2rem;
+     -moz-column-gap: 2rem;
+          column-gap: 2rem;
+  width: 300px;
+}
+
+.card__content {
+  gap: 1.2rem;
+}
+
+.card__title {
+  font-weight: 900;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.card__text {
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 183%;
+  text-align: justify;
 }/*# sourceMappingURL=style.css.map */
