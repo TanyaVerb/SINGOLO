@@ -250,6 +250,8 @@ html {
     height: 20px;
     position: relative;
     z-index: 3;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
   }
   .header__burger::before, .header__burger::after {
     content: "";
@@ -572,7 +574,7 @@ label:hover svg path {
   padding-top: 2rem;
   padding-bottom: 2rem;
   background-color: #edff7e;
-  border-top: #d4cbff;
+  border-top: 1px solid #d4cbff;
 }
 
 .footer__row {
